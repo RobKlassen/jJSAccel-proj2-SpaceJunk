@@ -1,0 +1,135 @@
+<!------------------------------------------------------------------------>
+<!------------------------------------------------------------------------>
+<!-- THE READ ME IS AT THE TOP OF THE scripts2.js FILE -->
+<!--                                                                    -->
+<!--THE ONLY THING I WANT TO REMARK ABOUT THE HTML IS THAT IT'S MORE
+    DESIGNED TO BE SERVICEABLE THAN ELEGANT.  THERE ARE FOR SURE AREAS
+    WHERE NAMING CLASSES AND IDS CAN BE CLEANED UP A BIT, AND THE DIVS
+    ARE DEFINITELY A BIT EXCESSIVE - BUT OVERALL I THINK IT'S "OKAY."   -->
+<!------------------------------------------------------------------------>
+<!------------------------------------------------------------------------>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Staatliches&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles2.css">
+    
+</head>
+<body>
+<div class="wrapper">
+    
+    <header>
+        <h1>Space Junk</h1>
+        <ul>
+            <a href="#solarSystemScaleSect"><li>Solar System Scaled</li></a>
+            <a href="#APODsect"><li>Random Astronomy Picture</li></a>
+            <a href="#ISSsect"><li>Life ISS Tracker</li></a>
+        </ul>
+    </header>
+
+    <!-- THIS SECTION OF HTML MARKS THE PLANET SCALING PART OF THE PROGRAM -->
+    <section class = "planetBoxWrapper" id="solarSystemScaleSect">
+        <h2>Solar System Objects Rendered To Scale</h2>
+        <div class="planetInfoContainer">
+
+            <ul class="planet1InfoBox">
+                <li>Celestial Body Name: <span class="planetNameText">planet1</span></li>
+                <li>Radius (in km): <span class="planetRadiusText"> </span></li>
+                <li>Orbits Around: <span class="planetOrbitsText">parentorbit</span></li>
+                <li>Gravity in m*s² (if known): <span class="planetGravityText">gravity</span></li>
+                <li>Mass: <span class="planetMassText">mass</span></li>
+                <li>Is this a planet: <span class="planetIsPlanet">bool</span></li>
+            </ul>
+
+            <ul class="planet2InfoBox">
+                <li>Celestial Body Name: <span class="planetNameText">planet1</span></li>
+                <li>Radius: <span class="planetRadiusText"> </span></li>
+                <li>Orbits Around: <span class="planetOrbitsText">parentorbit</span></li>
+                <li>Gravity in m*s² (if known): <span class="planetGravityText">gravity</span></li>
+                <li>Mass: <span class="planetMassText">mass</span></li>
+                <li>Is this a planet: <span class="planetIsPlanet">bool</span></li>
+            </ul>
+
+        </div>
+
+        <div class="buttonBox">
+            <button id = "GeneratePlanets">GENERATE NEW PLANETS</button>
+            <button id = "scaleUpSize">SCALE UP</button>
+            <button id = "scaleDownSize">SCALE DOWN</button>
+            <button id = "scaleToSmallerButton">SCALE TO SMALLER BODY</button>
+            <button id = "scaleToLargerButton">SCALE TO LARGER BODY</button>
+        </div>     
+
+        <p class = currentScale>scale: 1px = 1 km</p>
+
+        <!-- LOOK, PLANETBOXBOX IS A STUPID NAME BUT THIS WAS CRITICAL FOR FIXING SOME AWFUL RENDERING ISSUES I HAD WITH OVERFLOW:HIDDEN PLAYING POORLY WITH MY FLEXBOXES. -->
+        <div class="planetBoxBox">
+            <div class="planetBoxAll">
+                <div class="planet1"></div>
+            </div>
+            
+            <div class="planetBoxAll">
+                <div class="planet2"></div>
+            </div>
+        </div>
+
+    </section>
+    
+    <!-- APOD SECTION OF HTML -->
+    <!-- I want to note that I'm not doing anything for accessability with alt text, I know that's taboo.  But time and energy and 'code clutter' just led to it being neglected, I would set it to just be the description of the apod img -->
+    <section class = "wrapper" id = "APODsect">
+        <h2>Random 'Astronomy Picture of the Day'</h2>
+        <a href = "" id="APODnewPic">
+        <div class="APODContainer">
+            <ul>
+                <li id="APODtitleText"></li>
+                <li id="APODdate"></li>
+                <li id="APODexplanation"></li>
+                <li id="APODcopyright"></li>
+            </ul>
+            <img src="" alt="" id="APODimg">
+        </div>
+        </a>
+    </section> 
+
+    <!-- ISS TRACKER SECTION OF HTML -->
+    <section class="wrapper" id = "ISSsect">
+        <h2>ISS Live Position Tracker</h2>  
+        <div class="ISSContainer">        
+            <div class="updatedInterface">
+                <div class="ISSmarker"></div>
+                <img src="./assets/map-bw.jpg" alt="" class="ISSimgMap">
+            </div>
+        </div>
+
+        <div class="ISSinfoBox">
+            <div class="ISScoordinateBox">
+                <p>LATITUDE: <span class="ISSlatitudeCoordinate"></span></p>
+                <p>LONGITUDE: <span class="ISSlongitudeCoordinate"></span></p>
+            </div>
+        
+            <div class="ISSspeedHeightBox">
+                <p>VELOCITY: <span class="ISSvelocity"></span></p>
+                <p>ALTITUDE: <span class="ISSaltitude"></span></p>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <p>Created at Juno College by Rob K for 2021-spring2-js Project 2</p>
+    </footer>
+
+</div>
+
+<script src='https://code.jquery.com/jquery-3.6.0.js' integrity='sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=' crossorigin='anonymous'></script>
+<script src="scripts2.js"></script>
+
+</body>
+</html>
